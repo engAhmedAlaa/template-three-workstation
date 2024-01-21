@@ -4,19 +4,21 @@ const themeElement = document.querySelector('.theme');
 // Theme button
 const themeButton = themeElement.querySelector('.theme-button');
 
-// Dropdown
-const dropdown = document.querySelector('.dropdown');
 // Dropdown Trigger
-const dropdownTrigger = dropdown.querySelector('.dropdown-trigger');
+const dropdownTrigger = document.querySelector('.dropdown-trigger');
 // Dropdown Menu
-const dropdownMenu = dropdown.querySelector('.dropdown-menu');
-// Dropdown Links
-const dropdownLinks = dropdownMenu.querySelectorAll('.dropdown-link');
+const dropdownMenu = document.querySelector('.dropdown-menu');
+
+// Links
+const links = [
+  ...document.querySelectorAll('.nav-bar .main-link'),
+  ...dropdownMenu.querySelectorAll('.dropdown-link'),
+];
 
 // sections
-const sections = [...document.querySelectorAll('section[data-state]')];
+const sections = [...document.querySelectorAll('section[data-nav]')];
 
-let dropdownTimeoutId;
+// let dropdownTimeoutId;
 
 // // Toggle Button
 // const toggleButton = document.querySelector('.main-header .toggle-button');
@@ -72,26 +74,46 @@ function toggleTheme() {
   applyTheme(newState);
 }
 
+// Function Add Close Class NavBar Menu
+function addClosedClass() {
+  dropdownMenu.classList.add('closed');
+}
+
 // Open Dropdown Menu
 function openDropdownMenu() {
-  clearTimeout(dropdownTimeoutId);
-  // dropdownTrigger.setAttribute('data-state', 'open');
+  dropdownMenu.removeEventListener('animationend', addClosedClass);
+  dropdownTrigger.setAttribute('data-state', 'open');
   dropdownTrigger.setAttribute('aria-expanded', 'true');
-  // dropdownMenu.setAttribute('data-state', 'open');
-  dropdown.setAttribute('data-state', 'open');
+  dropdownMenu.setAttribute('data-state', 'open');
   dropdownMenu.classList.remove('closed');
 }
 
 // Close Dropdown Menu
 function closeDropdownMenu() {
-  // dropdownTrigger.setAttribute('data-state', 'closed');
+  dropdownTrigger.setAttribute('data-state', 'closed');
   dropdownTrigger.setAttribute('aria-expanded', 'false');
-  // dropdownMenu.setAttribute('data-state', 'closed');
-  dropdown.setAttribute('data-state', 'closed');
-  dropdownTimeoutId = setTimeout(() => {
-    dropdownMenu.classList.add('closed');
-  }, 350);
+  dropdownMenu.setAttribute('data-state', 'closed');
+  dropdownMenu.addEventListener('animationend', addClosedClass, {
+    once: true,
+  });
 }
+
+// Function Add Active State To Nav Links On Section Appearing
+function activateNavLinks() {
+  sections.forEach((section) => {
+    const halfScreen = window.innerHeight * 0.5;
+    const isVisible =
+      section.getBoundingClientRect().top < halfScreen &&
+      section.getBoundingClientRect().bottom > halfScreen;
+    const link = links.find(
+      (link) =>
+        link.getAttribute('data-nav') === section.getAttribute('data-nav')
+    );
+    if (isVisible) link.setAttribute('data-state', 'active');
+    else link.setAttribute('data-state', 'inactive');
+  });
+}
+activateNavLinks();
 
 // // Scroll To Specific Section
 // function scrollToSection(link) {
@@ -131,29 +153,34 @@ themeButton.addEventListener('click', toggleTheme);
 
 // Event To Open And Close Dropdown Menu on Clicking
 dropdownTrigger.addEventListener('click', () => {
-  if (dropdown.getAttribute('data-state') === 'closed') openDropdownMenu();
+  if (dropdownMenu.getAttribute('data-state') === 'closed') openDropdownMenu();
   else closeDropdownMenu();
 });
 
-dropdownLinks.forEach((link) =>
+document.addEventListener('click', function (event) {
+  if (
+    dropdownMenu.getAttribute('data-state') === 'open' &&
+    !dropdownMenu.contains(event.target) &&
+    !dropdownTrigger.contains(event.target)
+  ) {
+    closeDropdownMenu();
+  }
+});
+
+links.forEach((link) =>
   link.addEventListener('click', (event) => {
     event.preventDefault();
-    closeDropdownMenu();
+    if (dropdownMenu.getAttribute('data-state') === 'open') closeDropdownMenu();
     const section = sections.find(
-      (section) => section.id === link.getAttribute('data-state')
+      (section) =>
+        section.getAttribute('data-nav') === link.getAttribute('data-nav')
     );
     section.scrollIntoView();
   })
 );
 
-document.addEventListener('click', function (event) {
-  if (
-    dropdown.getAttribute('data-state') === 'open' &&
-    !dropdown.contains(event.target)
-  ) {
-    closeDropdownMenu();
-  }
-});
+// Event Adding Active State To Nav Links On Section Appearing
+window.addEventListener('scroll', activateNavLinks);
 
 // // Scroll To Specific Section On Clicking
 // navBar.addEventListener('click', (link) => {

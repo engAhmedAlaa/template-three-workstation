@@ -381,7 +381,7 @@ section:nth-of-type(odd).active .section-heading {
   transition: all var(--duration);
 }
 
-.main-list :is(.main-link, .dropdown-trigger):is(.active, :hover) {
+.main-list :is([data-state='active'], :hover) {
   color: var(--primary);
 }
 
@@ -396,9 +396,18 @@ section:nth-of-type(odd).active .section-heading {
   align-items: center;
 }
 
+.main-item .dropdown-trigger:is([data-state='open'], :hover) {
+  color: var(--primary);
+}
+
 .dropdown-trigger .arrow-down-icon {
   margin-left: 4px;
   font-size: 20px;
+  transition: transform var(--duration);
+}
+
+.dropdown-trigger[data-state='open'] .arrow-down-icon {
+  transform: rotate(180deg);
 }
 
 @media (min-width: 400px) {
@@ -409,39 +418,82 @@ section:nth-of-type(odd).active .section-heading {
 }
 
 .dropdown-menu {
+  --header-height: 132px;
   overflow: auto;
-  position: absolute;
-  top: 100%;
-  left: 0;
-  width: 100%;
-  height: calc(100dvh - 103px);
+  position: fixed;
+  top: var(--header-height);
+  right: 0;
   z-index: var(--z-index-lg);
-  background-color: var(--background);
-  padding: 1rem;
-  -webkit-column-gap: 2.2rem;
-  -moz-column-gap: 2.2rem;
-  column-gap: 2.2rem;
-  border-top: 1px solid var(--border-s);
-  box-shadow: var(--shadow);
-  display: none;
+  max-height: calc(100% - var(--header-height));
+  width: 100%;
   overscroll-behavior: contain;
+  /* display: none; */
 }
 
-[data-state='open'] .dropdown-menu {
+.dropdown-menu.closed {
+  display: none;
+}
+
+.dropdown-menu[data-state='open'] {
   display: block;
+  animation: animate-in var(--duration);
+}
+
+.dropdown-menu[data-state='closed'] {
+  animation: animate-out var(--duration);
+}
+
+@media (min-width: 316px) {
+  .dropdown-menu {
+    --header-height: 100px;
+  }
+}
+
+@media (min-width: 400px) {
+  .dropdown-menu {
+    --header-height: 103px;
+  }
 }
 
 @media (min-width: 768px) {
   .dropdown-menu {
-    height: calc(100dvh - 63px);
+    --header-height: 63px;
   }
 }
 
-.dropdown-menu > * + * {
-  margin-top: 4px;
+.dropdown-menu .container {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  background-color: var(--background);
+  border-top: 1px solid var(--border-s);
+  box-shadow: var(--shadow);
+  display: flex;
+  gap: 0.5rem 2rem;
+  flex-direction: column;
 }
 
-.dropdown-links > * + * {
+@media (min-width: 576px) {
+  .dropdown-menu .container {
+    flex-direction: row;
+    align-items: center;
+  }
+}
+
+.dropdown-menu .image-container {
+  display: none;
+}
+
+@media (min-width: 992px) {
+  .dropdown-menu .image-container {
+    display: block;
+  }
+}
+
+.dropdown-menu .dropdown-links {
+  flex: 1 0 auto;
+}
+
+.dropdown-menu .dropdown-links > * + * {
   margin-top: 4px;
 }
 
@@ -457,16 +509,11 @@ section:nth-of-type(odd).active .section-heading {
   transition: all var(--duration);
 }
 
-.dropdown-menu .dropdown-link {
-  /* margin-top: 4px; */
-}
-
 .dropdown-menu .dropdown-link:hover {
   background-color: var(--background-hover);
 }
 
-.dropdown-menu .dropdown-link.active {
-  color: var(--primary);
+.dropdown-menu .dropdown-link[data-state='active'] {
   background-color: var(--background-active);
 }
 
@@ -474,8 +521,12 @@ section:nth-of-type(odd).active .section-heading {
   color: var(--icon-color);
 }
 
-.dropdown-menu .dropdown-link:hover i {
+.dropdown-menu .dropdown-link:is([data-state='active'], :hover) i {
   color: var(--foreground-links);
+}
+
+.articles {
+  scroll-margin: 0;
 }
 
 /* .main-list .dropdown .dropdown-menu {
@@ -1038,26 +1089,26 @@ section:nth-of-type(odd).active .section-heading {
 }
 /* End Features Section */
 
-/* Start Testmonials Section */
-.testmonials {
+/* Start Testimonials Section */
+.testimonials {
   padding-top: var(--section-padding-top);
   padding-bottom: var(--section-padding-bottom);
   background-color: var(--background-alt);
 }
 
-.testmonials .testmonials-content {
+.testimonials .testimonials-content {
   display: -ms-grid;
   display: grid;
   gap: 2.5rem;
 }
 
 @media (min-width: 576px) {
-  .testmonials .testmonials-content {
+  .testimonials .testimonials-content {
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   }
 }
 
-.testmonials .testmonials-content .card {
+.testimonials .testimonials-content .card {
   background-color: var(--background);
   padding: 1.25rem;
   -webkit-box-shadow: 0 2px 5px var(--shadow-color);
@@ -1066,7 +1117,7 @@ section:nth-of-type(odd).active .section-heading {
   position: relative;
 }
 
-.testmonials .testmonials-content .card .avatar {
+.testimonials .testimonials-content .card .avatar {
   position: absolute;
   width: 100px;
   border-radius: 50%;
@@ -1075,34 +1126,34 @@ section:nth-of-type(odd).active .section-heading {
   border: 10px solid var(--background-alt);
 }
 
-.testmonials .testmonials-content .card .name {
+.testimonials .testimonials-content .card .name {
   color: var(--foreground);
 }
 
-.testmonials .testmonials-content .card .job {
+.testimonials .testimonials-content .card .job {
   display: block;
   color: var(--foreground-alt);
   margin: 0.625rem 0;
 }
 
-.testmonials .testmonials-content .card .rate {
+.testimonials .testimonials-content .card .rate {
   margin-bottom: 0.625rem;
 }
 
-.testmonials .testmonials-content .card .rate i {
+.testimonials .testimonials-content .card .rate i {
   color: var(--foreground-alt);
   margin-right: 0.3125rem;
 }
 
-.testmonials .testmonials-content .card .rate i.active {
+.testimonials .testimonials-content .card .rate i.active {
   color: #ffc107;
 }
 
-.testmonials .testmonials-content .card .details {
+.testimonials .testimonials-content .card .details {
   color: var(--foreground-muted);
   line-height: var(--line-height-alt);
 }
-/* End Testmonials Section */
+/* End Testimonials Section */
 
 /* Start Team Members Section */
 .team-members {
@@ -2593,6 +2644,20 @@ section:nth-of-type(odd).active .section-heading {
 /* End Scroll To Top Button */
 
 /* Start Animation */
+@keyframes animate-in {
+  0% {
+    opacity: 0;
+    transform: translateY(100px);
+  }
+}
+
+@keyframes animate-out {
+  100% {
+    opacity: 0;
+    transform: translateY(100px);
+  }
+}
+
 @-webkit-keyframes fill-left {
   50% {
     left: 0;
