@@ -115,7 +115,7 @@
               >
             </li>
             <div class="separator"></div>
-            <li class="main-item dropdown" data-state="closed">
+            <li class="main-item">
               <button
                 type="button"
                 class="dropdown-trigger"
@@ -138,227 +138,246 @@
                   />
                 </svg>
               </button>
+              <div class="dropdown-menu closed" data-state="closed">
+                <div class="image-container">
+                  <picture>
+                    <source
+                      srcset="images/dropdown/dropdown.avif"
+                      type="image/avif"
+                    />
+                    <img
+                      class="image"
+                      src="images/dropdown/dropdown.png"
+                      loading="lazy"
+                      alt="Dropdown image"
+                    />
+                  </picture>
+                </div>
+                <ul class="dropdown-links">
+                  <li class="dropdown-item">
+                    <a
+                      data-nav="features"
+                      href="#features"
+                      class="dropdown-link"
+                      ><svg
+                        class="link-icon"
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="1em"
+                        height="1em"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          fill="currentColor"
+                          d="M7 13h7q.425 0 .713-.288T15 12q0-.425-.288-.713T14 11H7q-.425 0-.713.288T6 12q0 .425.288.713T7 13Zm0-3h7q.425 0 .713-.288T15 9q0-.425-.288-.713T14 8H7q-.425 0-.713.288T6 9q0 .425.288.713T7 10ZM4 20q-.825 0-1.413-.588T2 18V6q0-.825.588-1.413T4 4h16q.825 0 1.413.588T22 6v12q0 .825-.588 1.413T20 20H4Zm0-2h16V6H4v12Zm0 0V6v12Z"
+                        />
+                      </svg>
+                      Features</a
+                    >
+                  </li>
+                  <li class="dropdown-item">
+                    <a
+                      class="dropdown-link"
+                      data-nav="testimonials"
+                      href="#testmonials"
+                      ><svg
+                        class="link-icon"
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="1em"
+                        height="1em"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          fill="currentColor"
+                          d="M7 14h10q.425 0 .713-.288T18 13q0-.425-.288-.713T17 12H7q-.425 0-.713.288T6 13q0 .425.288.713T7 14Zm0-3h10q.425 0 .713-.288T18 10q0-.425-.288-.713T17 9H7q-.425 0-.713.288T6 10q0 .425.288.713T7 11Zm0-3h10q.425 0 .713-.288T18 7q0-.425-.288-.713T17 6H7q-.425 0-.713.288T6 7q0 .425.288.713T7 8ZM4 18q-.825 0-1.413-.588T2 16V4q0-.825.588-1.413T4 2h16q.825 0 1.413.588T22 4v15.575q0 .675-.613.938T20.3 20.3L18 18H4Zm0-2h16V4H4v12Zm0 0V4v12Z"
+                        />
+                      </svg>
+                      Testimonials</a
+                    >
+                  </li>
+                  <li class="dropdown-item">
+                    <a
+                      class="dropdown-link"
+                      data-nav="team-members"
+                      href="#team-members"
+                      ><svg
+                        class="link-icon"
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="1em"
+                        height="1em"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          fill="currentColor"
+                          d="M12 12q-1.65 0-2.825-1.175T8 8q0-1.65 1.175-2.825T12 4q1.65 0 2.825 1.175T16 8q0 1.65-1.175 2.825T12 12Zm6 8H6q-.825 0-1.413-.588T4 18v-.8q0-.85.438-1.563T5.6 14.55q1.55-.775 3.15-1.163T12 13q1.65 0 3.25.388t3.15 1.162q.725.375 1.163 1.088T20 17.2v.8q0 .825-.588 1.413T18 20ZM6 18h12v-.8q0-.275-.138-.5t-.362-.35q-1.35-.675-2.725-1.012T12 15q-1.4 0-2.775.338T6.5 16.35q-.225.125-.363.35T6 17.2v.8Zm6-8q.825 0 1.413-.588T14 8q0-.825-.588-1.413T12 6q-.825 0-1.413.588T10 8q0 .825.588 1.413T12 10Zm0-2Zm0 10Z"
+                        />
+                      </svg>
+                      Team Members</a
+                    >
+                  </li>
+                  <li class="dropdown-item">
+                    <a
+                      class="dropdown-link"
+                      data-nav="services"
+                      href="#services"
+                      ><svg
+                        class="link-icon"
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="1em"
+                        height="1em"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          fill="currentColor"
+                          d="M12 14ZM2 19v-9q0-.825.588-1.413T4 8h3V6q0-.825.588-1.413T9 4h6q.825 0 1.413.588T17 6v2h3q.825 0 1.413.588T22 10v9q0 .425-.288.713T21 20H3q-.425 0-.713-.288T2 19Zm6-4q0 .425-.288.713T7 16q-.425 0-.713-.288T6 15H4v3h16v-3h-2q0 .425-.288.713T17 16q-.425 0-.713-.288T16 15H8Zm-4-5v3h2q0-.425.288-.713T7 12q.425 0 .713.288T8 13h8q0-.425.288-.713T17 12q.425 0 .713.288T18 13h2v-3H4Zm5-2h6V6H9v2Z"
+                        />
+                      </svg>
+                      Services</a
+                    >
+                  </li>
+                  <li class="dropdown-item">
+                    <a
+                      class="dropdown-link"
+                      data-nav="our-skills"
+                      href="#our-skills"
+                      ><svg
+                        class="link-icon"
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="1em"
+                        height="1em"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          fill="currentColor"
+                          d="m10.6 13.8l-2.15-2.15q-.275-.275-.7-.275t-.7.275q-.275.275-.275.7t.275.7L9.9 15.9q.3.3.7.3t.7-.3l5.65-5.65q.275-.275.275-.7t-.275-.7q-.275-.275-.7-.275t-.7.275L10.6 13.8ZM12 22q-2.075 0-3.9-.788t-3.175-2.137q-1.35-1.35-2.137-3.175T2 12q0-2.075.788-3.9t2.137-3.175q1.35-1.35 3.175-2.137T12 2q2.075 0 3.9.788t3.175 2.137q1.35 1.35 2.138 3.175T22 12q0 2.075-.788 3.9t-2.137 3.175q-1.35 1.35-3.175 2.138T12 22Zm0-2q3.35 0 5.675-2.325T20 12q0-3.35-2.325-5.675T12 4Q8.65 4 6.325 6.325T4 12q0 3.35 2.325 5.675T12 20Zm0-8Z"
+                        />
+                      </svg>
+                      Our Skills</a
+                    >
+                  </li>
+                  <li class="dropdown-item">
+                    <a
+                      class="dropdown-link"
+                      data-nav="how-it-works"
+                      href="#how-it-works"
+                      ><svg
+                        class="link-icon"
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="1em"
+                        height="1em"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          fill="currentColor"
+                          d="M4 18q-.425 0-.713-.288T3 17q0-.425.288-.713T4 16h10q.425 0 .713.288T15 17q0 .425-.288.713T14 18H4Zm0-5q-.425 0-.713-.288T3 12q0-.425.288-.713T4 11h16q.425 0 .713.288T21 12q0 .425-.288.713T20 13H4Zm0-5q-.425 0-.713-.288T3 7q0-.425.288-.713T4 6h16q.425 0 .713.288T21 7q0 .425-.288.713T20 8H4Z"
+                        />
+                      </svg>
+                      How it Works</a
+                    >
+                  </li>
+                </ul>
+                <ul class="dropdown-links">
+                  <li class="dropdown-item">
+                    <a class="dropdown-link" data-nav="events" href="#events"
+                      ><svg
+                        class="link-icon"
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="1em"
+                        height="1em"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          fill="currentColor"
+                          d="M5 22q-.825 0-1.413-.588T3 20V6q0-.825.588-1.413T5 4h1V3q0-.425.288-.713T7 2q.425 0 .713.288T8 3v1h8V3q0-.425.288-.713T17 2q.425 0 .713.288T18 3v1h1q.825 0 1.413.588T21 6v14q0 .825-.588 1.413T19 22H5Zm0-2h14V10H5v10ZM5 8h14V6H5v2Zm0 0V6v2Zm7 6q-.425 0-.713-.288T11 13q0-.425.288-.713T12 12q.425 0 .713.288T13 13q0 .425-.288.713T12 14Zm-4 0q-.425 0-.713-.288T7 13q0-.425.288-.713T8 12q.425 0 .713.288T9 13q0 .425-.288.713T8 14Zm8 0q-.425 0-.713-.288T15 13q0-.425.288-.713T16 12q.425 0 .713.288T17 13q0 .425-.288.713T16 14Zm-4 4q-.425 0-.713-.288T11 17q0-.425.288-.713T12 16q.425 0 .713.288T13 17q0 .425-.288.713T12 18Zm-4 0q-.425 0-.713-.288T7 17q0-.425.288-.713T8 16q.425 0 .713.288T9 17q0 .425-.288.713T8 18Zm8 0q-.425 0-.713-.288T15 17q0-.425.288-.713T16 16q.425 0 .713.288T17 17q0 .425-.288.713T16 18Z"
+                        />
+                      </svg>
+                      Events</a
+                    >
+                  </li>
+                  <li class="dropdown-item">
+                    <a
+                      class="dropdown-link"
+                      data-nav="pricing-plans"
+                      href="#pricing-plans"
+                      ><svg
+                        class="link-icon"
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="1em"
+                        height="1em"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          fill="currentColor"
+                          d="M10 19q-.425 0-.713-.288T9 18q0-.425.288-.713T10 17h10q.425 0 .713.288T21 18q0 .425-.288.713T20 19H10Zm0-6q-.425 0-.713-.288T9 12q0-.425.288-.713T10 11h10q.425 0 .713.288T21 12q0 .425-.288.713T20 13H10Zm0-6q-.425 0-.713-.288T9 6q0-.425.288-.713T10 5h10q.425 0 .713.288T21 6q0 .425-.288.713T20 7H10ZM5 20q-.825 0-1.413-.588T3 18q0-.825.588-1.413T5 16q.825 0 1.413.588T7 18q0 .825-.588 1.413T5 20Zm0-6q-.825 0-1.413-.588T3 12q0-.825.588-1.413T5 10q.825 0 1.413.588T7 12q0 .825-.588 1.413T5 14Zm0-6q-.825 0-1.413-.588T3 6q0-.825.588-1.413T5 4q.825 0 1.413.588T7 6q0 .825-.588 1.413T5 8Z"
+                        />
+                      </svg>
+                      Pricing Plans</a
+                    >
+                  </li>
+                  <li class="dropdown-item">
+                    <a
+                      class="dropdown-link"
+                      data-nav="top-videos"
+                      href="#top-videos"
+                      ><svg
+                        class="link-icon"
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="1em"
+                        height="1em"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          fill="currentColor"
+                          d="m10.65 15.75l4.875-3.125q.35-.225.35-.625t-.35-.625L10.65 8.25q-.375-.25-.763-.038t-.387.663v6.25q0 .45.388.663t.762-.038ZM12 22q-2.075 0-3.9-.788t-3.175-2.137q-1.35-1.35-2.137-3.175T2 12q0-2.075.788-3.9t2.137-3.175q1.35-1.35 3.175-2.137T12 2q2.075 0 3.9.788t3.175 2.137q1.35 1.35 2.138 3.175T22 12q0 2.075-.788 3.9t-2.137 3.175q-1.35 1.35-3.175 2.138T12 22Zm0-2q3.35 0 5.675-2.325T20 12q0-3.35-2.325-5.675T12 4Q8.65 4 6.325 6.325T4 12q0 3.35 2.325 5.675T12 20Zm0-8Z"
+                        />
+                      </svg>
+                      Top Videos</a
+                    >
+                  </li>
+                  <li class="dropdown-item">
+                    <a class="dropdown-link" data-nav="stats" href="#stats"
+                      ><svg
+                        class="link-icon"
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="1em"
+                        height="1em"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          fill="currentColor"
+                          d="M3 21q-.425 0-.713-.288T2 20q0-.425.288-.713T3 19h18q.425 0 .713.288T22 20q0 .425-.288.713T21 21H3Zm1.5-3q-.625 0-1.063-.438T3 16.5v-4q0-.625.438-1.063T4.5 11q.625 0 1.063.438T6 12.5v4q0 .625-.438 1.063T4.5 18Zm5 0q-.625 0-1.063-.438T8 16.5v-9q0-.625.438-1.063T9.5 6q.625 0 1.063.438T11 7.5v9q0 .625-.438 1.063T9.5 18Zm5 0q-.625 0-1.063-.438T13 16.5v-6q0-.625.438-1.063T14.5 9q.625 0 1.063.438T16 10.5v6q0 .625-.438 1.063T14.5 18Zm5 0q-.625 0-1.063-.438T18 16.5v-12q0-.625.438-1.063T19.5 3q.625 0 1.063.438T21 4.5v12q0 .625-.438 1.063T19.5 18Z"
+                        />
+                      </svg>
+                      Stats</a
+                    >
+                  </li>
+                  <li class="dropdown-item">
+                    <a
+                      class="dropdown-link"
+                      data-nav="discount"
+                      href="#discount"
+                      ><svg
+                        class="link-icon"
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="1em"
+                        height="1em"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          fill="currentColor"
+                          d="M7.5 11q-1.45 0-2.475-1.025T4 7.5q0-1.45 1.025-2.475T7.5 4q1.45 0 2.475 1.025T11 7.5q0 1.45-1.025 2.475T7.5 11Zm0-2q.625 0 1.063-.438T9 7.5q0-.625-.438-1.063T7.5 6q-.625 0-1.063.438T6 7.5q0 .625.438 1.063T7.5 9Zm9 11q-1.45 0-2.475-1.025T13 16.5q0-1.45 1.025-2.475T16.5 13q1.45 0 2.475 1.025T20 16.5q0 1.45-1.025 2.475T16.5 20Zm0-2q.625 0 1.063-.438T18 16.5q0-.625-.438-1.063T16.5 15q-.625 0-1.063.438T15 16.5q0 .625.438 1.063T16.5 18ZM4.7 19.3q-.275-.275-.275-.7t.275-.7L17.9 4.7q.275-.275.7-.275t.7.275q.275.275.275.7t-.275.7L6.1 19.3q-.275.275-.7.275t-.7-.275Z"
+                        />
+                      </svg>
+                      Request A Discount</a
+                    >
+                  </li>
+                </ul>
+              </div>
             </li>
           </ul>
         </nav>
       </div>
     </header>
     <!-- End Header -->
-
-    <!-- Start Dropdown Menu -->
-    <div class="dropdown-menu closed" data-state="closed">
-      <div class="container">
-        <div class="image-container">
-          <img
-            class="image"
-            src="images/dropdown/dropdown.png"
-            loading="lazy"
-            alt="Dropdown image"
-          />
-        </div>
-        <ul class="dropdown-links">
-          <li class="dropdown-item">
-            <a data-nav="features" href="#features" class="dropdown-link"
-              ><svg
-                class="link-icon"
-                xmlns="http://www.w3.org/2000/svg"
-                width="1em"
-                height="1em"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  fill="currentColor"
-                  d="M7 13h7q.425 0 .713-.288T15 12q0-.425-.288-.713T14 11H7q-.425 0-.713.288T6 12q0 .425.288.713T7 13Zm0-3h7q.425 0 .713-.288T15 9q0-.425-.288-.713T14 8H7q-.425 0-.713.288T6 9q0 .425.288.713T7 10ZM4 20q-.825 0-1.413-.588T2 18V6q0-.825.588-1.413T4 4h16q.825 0 1.413.588T22 6v12q0 .825-.588 1.413T20 20H4Zm0-2h16V6H4v12Zm0 0V6v12Z"
-                />
-              </svg>
-              Features</a
-            >
-          </li>
-          <li class="dropdown-item">
-            <a class="dropdown-link" data-nav="testimonials" href="#testmonials"
-              ><svg
-                class="link-icon"
-                xmlns="http://www.w3.org/2000/svg"
-                width="1em"
-                height="1em"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  fill="currentColor"
-                  d="M7 14h10q.425 0 .713-.288T18 13q0-.425-.288-.713T17 12H7q-.425 0-.713.288T6 13q0 .425.288.713T7 14Zm0-3h10q.425 0 .713-.288T18 10q0-.425-.288-.713T17 9H7q-.425 0-.713.288T6 10q0 .425.288.713T7 11Zm0-3h10q.425 0 .713-.288T18 7q0-.425-.288-.713T17 6H7q-.425 0-.713.288T6 7q0 .425.288.713T7 8ZM4 18q-.825 0-1.413-.588T2 16V4q0-.825.588-1.413T4 2h16q.825 0 1.413.588T22 4v15.575q0 .675-.613.938T20.3 20.3L18 18H4Zm0-2h16V4H4v12Zm0 0V4v12Z"
-                />
-              </svg>
-              Testimonials</a
-            >
-          </li>
-          <li class="dropdown-item">
-            <a
-              class="dropdown-link"
-              data-nav="team-members"
-              href="#team-members"
-              ><svg
-                class="link-icon"
-                xmlns="http://www.w3.org/2000/svg"
-                width="1em"
-                height="1em"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  fill="currentColor"
-                  d="M12 12q-1.65 0-2.825-1.175T8 8q0-1.65 1.175-2.825T12 4q1.65 0 2.825 1.175T16 8q0 1.65-1.175 2.825T12 12Zm6 8H6q-.825 0-1.413-.588T4 18v-.8q0-.85.438-1.563T5.6 14.55q1.55-.775 3.15-1.163T12 13q1.65 0 3.25.388t3.15 1.162q.725.375 1.163 1.088T20 17.2v.8q0 .825-.588 1.413T18 20ZM6 18h12v-.8q0-.275-.138-.5t-.362-.35q-1.35-.675-2.725-1.012T12 15q-1.4 0-2.775.338T6.5 16.35q-.225.125-.363.35T6 17.2v.8Zm6-8q.825 0 1.413-.588T14 8q0-.825-.588-1.413T12 6q-.825 0-1.413.588T10 8q0 .825.588 1.413T12 10Zm0-2Zm0 10Z"
-                />
-              </svg>
-              Team Members</a
-            >
-          </li>
-          <li class="dropdown-item">
-            <a class="dropdown-link" data-nav="services" href="#services"
-              ><svg
-                class="link-icon"
-                xmlns="http://www.w3.org/2000/svg"
-                width="1em"
-                height="1em"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  fill="currentColor"
-                  d="M12 14ZM2 19v-9q0-.825.588-1.413T4 8h3V6q0-.825.588-1.413T9 4h6q.825 0 1.413.588T17 6v2h3q.825 0 1.413.588T22 10v9q0 .425-.288.713T21 20H3q-.425 0-.713-.288T2 19Zm6-4q0 .425-.288.713T7 16q-.425 0-.713-.288T6 15H4v3h16v-3h-2q0 .425-.288.713T17 16q-.425 0-.713-.288T16 15H8Zm-4-5v3h2q0-.425.288-.713T7 12q.425 0 .713.288T8 13h8q0-.425.288-.713T17 12q.425 0 .713.288T18 13h2v-3H4Zm5-2h6V6H9v2Z"
-                />
-              </svg>
-              Services</a
-            >
-          </li>
-          <li class="dropdown-item">
-            <a class="dropdown-link" data-nav="our-skills" href="#our-skills"
-              ><svg
-                class="link-icon"
-                xmlns="http://www.w3.org/2000/svg"
-                width="1em"
-                height="1em"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  fill="currentColor"
-                  d="m10.6 13.8l-2.15-2.15q-.275-.275-.7-.275t-.7.275q-.275.275-.275.7t.275.7L9.9 15.9q.3.3.7.3t.7-.3l5.65-5.65q.275-.275.275-.7t-.275-.7q-.275-.275-.7-.275t-.7.275L10.6 13.8ZM12 22q-2.075 0-3.9-.788t-3.175-2.137q-1.35-1.35-2.137-3.175T2 12q0-2.075.788-3.9t2.137-3.175q1.35-1.35 3.175-2.137T12 2q2.075 0 3.9.788t3.175 2.137q1.35 1.35 2.138 3.175T22 12q0 2.075-.788 3.9t-2.137 3.175q-1.35 1.35-3.175 2.138T12 22Zm0-2q3.35 0 5.675-2.325T20 12q0-3.35-2.325-5.675T12 4Q8.65 4 6.325 6.325T4 12q0 3.35 2.325 5.675T12 20Zm0-8Z"
-                />
-              </svg>
-              Our Skills</a
-            >
-          </li>
-          <li class="dropdown-item">
-            <a
-              class="dropdown-link"
-              data-nav="how-it-works"
-              href="#how-it-works"
-              ><svg
-                class="link-icon"
-                xmlns="http://www.w3.org/2000/svg"
-                width="1em"
-                height="1em"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  fill="currentColor"
-                  d="M4 18q-.425 0-.713-.288T3 17q0-.425.288-.713T4 16h10q.425 0 .713.288T15 17q0 .425-.288.713T14 18H4Zm0-5q-.425 0-.713-.288T3 12q0-.425.288-.713T4 11h16q.425 0 .713.288T21 12q0 .425-.288.713T20 13H4Zm0-5q-.425 0-.713-.288T3 7q0-.425.288-.713T4 6h16q.425 0 .713.288T21 7q0 .425-.288.713T20 8H4Z"
-                />
-              </svg>
-              How it Works</a
-            >
-          </li>
-        </ul>
-        <ul class="dropdown-links">
-          <li class="dropdown-item">
-            <a class="dropdown-link" data-nav="events" href="#events"
-              ><svg
-                class="link-icon"
-                xmlns="http://www.w3.org/2000/svg"
-                width="1em"
-                height="1em"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  fill="currentColor"
-                  d="M5 22q-.825 0-1.413-.588T3 20V6q0-.825.588-1.413T5 4h1V3q0-.425.288-.713T7 2q.425 0 .713.288T8 3v1h8V3q0-.425.288-.713T17 2q.425 0 .713.288T18 3v1h1q.825 0 1.413.588T21 6v14q0 .825-.588 1.413T19 22H5Zm0-2h14V10H5v10ZM5 8h14V6H5v2Zm0 0V6v2Zm7 6q-.425 0-.713-.288T11 13q0-.425.288-.713T12 12q.425 0 .713.288T13 13q0 .425-.288.713T12 14Zm-4 0q-.425 0-.713-.288T7 13q0-.425.288-.713T8 12q.425 0 .713.288T9 13q0 .425-.288.713T8 14Zm8 0q-.425 0-.713-.288T15 13q0-.425.288-.713T16 12q.425 0 .713.288T17 13q0 .425-.288.713T16 14Zm-4 4q-.425 0-.713-.288T11 17q0-.425.288-.713T12 16q.425 0 .713.288T13 17q0 .425-.288.713T12 18Zm-4 0q-.425 0-.713-.288T7 17q0-.425.288-.713T8 16q.425 0 .713.288T9 17q0 .425-.288.713T8 18Zm8 0q-.425 0-.713-.288T15 17q0-.425.288-.713T16 16q.425 0 .713.288T17 17q0 .425-.288.713T16 18Z"
-                />
-              </svg>
-              Events</a
-            >
-          </li>
-          <li class="dropdown-item">
-            <a
-              class="dropdown-link"
-              data-nav="pricing-plans"
-              href="#pricing-plans"
-              ><svg
-                class="link-icon"
-                xmlns="http://www.w3.org/2000/svg"
-                width="1em"
-                height="1em"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  fill="currentColor"
-                  d="M10 19q-.425 0-.713-.288T9 18q0-.425.288-.713T10 17h10q.425 0 .713.288T21 18q0 .425-.288.713T20 19H10Zm0-6q-.425 0-.713-.288T9 12q0-.425.288-.713T10 11h10q.425 0 .713.288T21 12q0 .425-.288.713T20 13H10Zm0-6q-.425 0-.713-.288T9 6q0-.425.288-.713T10 5h10q.425 0 .713.288T21 6q0 .425-.288.713T20 7H10ZM5 20q-.825 0-1.413-.588T3 18q0-.825.588-1.413T5 16q.825 0 1.413.588T7 18q0 .825-.588 1.413T5 20Zm0-6q-.825 0-1.413-.588T3 12q0-.825.588-1.413T5 10q.825 0 1.413.588T7 12q0 .825-.588 1.413T5 14Zm0-6q-.825 0-1.413-.588T3 6q0-.825.588-1.413T5 4q.825 0 1.413.588T7 6q0 .825-.588 1.413T5 8Z"
-                />
-              </svg>
-              Pricing Plans</a
-            >
-          </li>
-          <li class="dropdown-item">
-            <a class="dropdown-link" data-nav="top-videos" href="#top-videos"
-              ><svg
-                class="link-icon"
-                xmlns="http://www.w3.org/2000/svg"
-                width="1em"
-                height="1em"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  fill="currentColor"
-                  d="m10.65 15.75l4.875-3.125q.35-.225.35-.625t-.35-.625L10.65 8.25q-.375-.25-.763-.038t-.387.663v6.25q0 .45.388.663t.762-.038ZM12 22q-2.075 0-3.9-.788t-3.175-2.137q-1.35-1.35-2.137-3.175T2 12q0-2.075.788-3.9t2.137-3.175q1.35-1.35 3.175-2.137T12 2q2.075 0 3.9.788t3.175 2.137q1.35 1.35 2.138 3.175T22 12q0 2.075-.788 3.9t-2.137 3.175q-1.35 1.35-3.175 2.138T12 22Zm0-2q3.35 0 5.675-2.325T20 12q0-3.35-2.325-5.675T12 4Q8.65 4 6.325 6.325T4 12q0 3.35 2.325 5.675T12 20Zm0-8Z"
-                />
-              </svg>
-              Top Videos</a
-            >
-          </li>
-          <li class="dropdown-item">
-            <a class="dropdown-link" data-nav="stats" href="#stats"
-              ><svg
-                class="link-icon"
-                xmlns="http://www.w3.org/2000/svg"
-                width="1em"
-                height="1em"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  fill="currentColor"
-                  d="M3 21q-.425 0-.713-.288T2 20q0-.425.288-.713T3 19h18q.425 0 .713.288T22 20q0 .425-.288.713T21 21H3Zm1.5-3q-.625 0-1.063-.438T3 16.5v-4q0-.625.438-1.063T4.5 11q.625 0 1.063.438T6 12.5v4q0 .625-.438 1.063T4.5 18Zm5 0q-.625 0-1.063-.438T8 16.5v-9q0-.625.438-1.063T9.5 6q.625 0 1.063.438T11 7.5v9q0 .625-.438 1.063T9.5 18Zm5 0q-.625 0-1.063-.438T13 16.5v-6q0-.625.438-1.063T14.5 9q.625 0 1.063.438T16 10.5v6q0 .625-.438 1.063T14.5 18Zm5 0q-.625 0-1.063-.438T18 16.5v-12q0-.625.438-1.063T19.5 3q.625 0 1.063.438T21 4.5v12q0 .625-.438 1.063T19.5 18Z"
-                />
-              </svg>
-              Stats</a
-            >
-          </li>
-          <li class="dropdown-item">
-            <a class="dropdown-link" data-nav="discount" href="#discount"
-              ><svg
-                class="link-icon"
-                xmlns="http://www.w3.org/2000/svg"
-                width="1em"
-                height="1em"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  fill="currentColor"
-                  d="M7.5 11q-1.45 0-2.475-1.025T4 7.5q0-1.45 1.025-2.475T7.5 4q1.45 0 2.475 1.025T11 7.5q0 1.45-1.025 2.475T7.5 11Zm0-2q.625 0 1.063-.438T9 7.5q0-.625-.438-1.063T7.5 6q-.625 0-1.063.438T6 7.5q0 .625.438 1.063T7.5 9Zm9 11q-1.45 0-2.475-1.025T13 16.5q0-1.45 1.025-2.475T16.5 13q1.45 0 2.475 1.025T20 16.5q0 1.45-1.025 2.475T16.5 20Zm0-2q.625 0 1.063-.438T18 16.5q0-.625-.438-1.063T16.5 15q-.625 0-1.063.438T15 16.5q0 .625.438 1.063T16.5 18ZM4.7 19.3q-.275-.275-.275-.7t.275-.7L17.9 4.7q.275-.275.7-.275t.7.275q.275.275.275.7t-.275.7L6.1 19.3q-.275.275-.7.275t-.7-.275Z"
-                />
-              </svg>
-              Request A Discount</a
-            >
-          </li>
-        </ul>
-      </div>
-    </div>
-    <!-- End Dropdown Menu -->
 
     <!-- Start Landing Section -->
     <section class="landing" id="home" data-nav="home">
