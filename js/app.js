@@ -18,19 +18,8 @@ const links = [
 // sections
 const sections = [...document.querySelectorAll('section[data-nav]')];
 
-// let dropdownTimeoutId;
-
-// // Toggle Button
-// const toggleButton = document.querySelector('.main-header .toggle-button');
-
-// // Navbar Menu
-// const navBar = document.querySelector('.nav-bar');
-
-// // Popup Menu
-// const popUpMenu = document.getElementById('pop-up');
-
-// // All Sections
-// const sections = document.querySelectorAll('section');
+// Begin scroll button
+const beginScrollButton = document.querySelector('.begin-scroll-button');
 
 // // Scroll To Top Button
 // const toTopButton = document.querySelector('span.up');
@@ -115,6 +104,13 @@ function activateNavLinks() {
 }
 activateNavLinks();
 
+// Function Beginning Scroll
+function beginScroll(event) {
+  event.preventDefault();
+  const articlesSection = document.getElementById('articles');
+  articlesSection.scrollIntoView();
+}
+
 // // Scroll To Specific Section
 // function scrollToSection(link) {
 //   link.preventDefault();
@@ -181,6 +177,9 @@ links.forEach((link) =>
 
 // Event Adding Active State To Nav Links On Section Appearing
 window.addEventListener('scroll', activateNavLinks);
+
+// Event Beginning Scroll
+beginScrollButton.addEventListener('click', beginScroll);
 
 // // Scroll To Specific Section On Clicking
 // navBar.addEventListener('click', (link) => {

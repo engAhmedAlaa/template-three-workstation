@@ -379,29 +379,42 @@
     </header>
     <!-- End Header -->
 
-    <!-- Start Landing Section -->
-    <section class="landing" id="home" data-nav="home">
+    <!-- Start Home Section -->
+    <section class="home" id="home" data-nav="home">
       <div class="container">
         <div class="welcome">
           <h1 class="title">Welcome, To Our Website</h1>
-          <p>
+          <p class="details">
             Here I'm gonna share everything about my life. Books I'm reading,
             Games I'm Playing, Stories and Events
           </p>
         </div>
-        <div class="image">
-          <img
-            src="images/landing-image.png"
-            alt="Landing Image"
-            loading="eager"
-          />
+        <div class="image-container">
+          <picture>
+            <source srcset="images/home/home.avif" />
+            <img class="image" src="images/home/home.png" alt="Home Image" />
+          </picture>
         </div>
       </div>
-      <a href="#articles" class="go-down"
-        ><i class="fa-solid fa-angles-down"></i
-      ></a>
+      <button
+        type="button"
+        class="begin-scroll-button"
+        aria-label="Begin scroll"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="1em"
+          height="1em"
+          viewBox="0 0 24 24"
+        >
+          <path
+            fill="currentColor"
+            d="m12 16.175l3.9-3.875q.275-.275.688-.288t.712.288q.275.275.275.7t-.275.7l-4.6 4.6q-.15.15-.325.213t-.375.062q-.2 0-.375-.063T11.3 18.3l-4.6-4.6q-.275-.275-.288-.687T6.7 12.3q.275-.275.7-.275t.7.275l3.9 3.875Zm0-6L15.9 6.3q.275-.275.688-.287t.712.287q.275.275.275.7t-.275.7l-4.6 4.6q-.15.15-.325.213t-.375.062q-.2 0-.375-.062T11.3 12.3L6.7 7.7q-.275-.275-.288-.688T6.7 6.3q.275-.275.7-.275t.7.275l3.9 3.875Z"
+          />
+        </svg>
+      </button>
     </section>
-    <!-- End Landing Section -->
+    <!-- End Home Section -->
 
     <!-- Start Articles Section -->
     <section class="articles" id="articles" data-nav="articles">
