@@ -65,7 +65,8 @@ function toggleTheme() {
 
 // Function Add Close Class NavBar Menu
 function addClosedClass() {
-  dropdownMenu.classList.add('closed');
+  // dropdownMenu.classList.add('closed');
+  dropdownMenu.setAttribute('hidden', '');
 }
 
 // Open Dropdown Menu
@@ -74,7 +75,8 @@ function openDropdownMenu() {
   dropdownTrigger.setAttribute('data-state', 'open');
   dropdownTrigger.setAttribute('aria-expanded', 'true');
   dropdownMenu.setAttribute('data-state', 'open');
-  dropdownMenu.classList.remove('closed');
+  // dropdownMenu.classList.remove('closed');
+  dropdownMenu.removeAttribute('hidden');
 }
 
 // Close Dropdown Menu
@@ -201,3 +203,16 @@ beginScrollButton.addEventListener('click', beginScroll);
 // toTopButton.addEventListener('click', () => {
 //   window.scrollTo({ top: 0 });
 // });
+
+const header = document.querySelector('.main-header');
+let windowScrollY = scrollY;
+function controlHeader() {
+  console.log(windowScrollY, scrollY);
+  if (windowScrollY < scrollY) {
+    header.classList.add('scrolled');
+  } else {
+    header.classList.remove('scrolled');
+  }
+  windowScrollY = scrollY;
+}
+window.addEventListener('scroll', controlHeader);
