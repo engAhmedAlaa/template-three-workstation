@@ -106,6 +106,17 @@ function activateNavLinks() {
 }
 activateNavLinks();
 
+// Function Add Active State To Section on Appearing
+function activateSections() {
+  for (const section of sections) {
+    const halfScreen = window.innerHeight * 0.5;
+    const isVisible = section.getBoundingClientRect().top < halfScreen;
+    if (isVisible) section.setAttribute('data-state', 'active');
+    else section.setAttribute('data-state', 'inactive');
+  }
+}
+activateSections();
+
 // Function Beginning Scroll
 function beginScroll(event) {
   event.preventDefault();
@@ -180,6 +191,9 @@ links.forEach((link) =>
 // Event Adding Active State To Nav Links On Section Appearing
 window.addEventListener('scroll', activateNavLinks);
 
+// Event Adding Active State To Sections On Appearing
+window.addEventListener('scroll', activateSections);
+
 // Event Beginning Scroll
 beginScrollButton.addEventListener('click', beginScroll);
 
@@ -203,16 +217,3 @@ beginScrollButton.addEventListener('click', beginScroll);
 // toTopButton.addEventListener('click', () => {
 //   window.scrollTo({ top: 0 });
 // });
-
-const header = document.querySelector('.main-header');
-let windowScrollY = scrollY;
-function controlHeader() {
-  console.log(windowScrollY, scrollY);
-  if (windowScrollY < scrollY) {
-    header.classList.add('scrolled');
-  } else {
-    header.classList.remove('scrolled');
-  }
-  windowScrollY = scrollY;
-}
-window.addEventListener('scroll', controlHeader);
